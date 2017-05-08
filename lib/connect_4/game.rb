@@ -42,15 +42,18 @@ class Connect_4
   message =  "player current #{@player == :red ? "Red" : "Blue"}"
   @output.puts message
   col  =   @input.gets.to_i
-  @board[1] << @player
+  if @board[col].length == 6
+    @output.puts "invalid choice - column full !"
+    raise ArgumentError
+  else
+    @board[col] << @player
+    @output.puts "column #{col} selected"
+    @player = @player == :red ? :blue : :red
+  end
 
-  @output.puts "column #{col} selected"
-  @player = @player == :red ? :blue : :red
 end
 
-# def column(col)
-#   @board[col]
-# end
+
 
 def get_player
   @player
@@ -60,8 +63,16 @@ def board
   @board
 end
 
-def win?
-  not (@board =~ /RRRR|BBBB/ ).nil?
+
+def win?(current = 0)
+  row  = ""
+
+ @board.each do |item|
+    row << (item.length != current + 1 ?    " " : item[current].to_s)
+  end
+
+ not (row =~ /redredredred|blueblueblueblue/ ).nil?
+
 end
 
 
