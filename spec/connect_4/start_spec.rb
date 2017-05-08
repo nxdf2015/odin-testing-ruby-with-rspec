@@ -11,12 +11,12 @@ describe ".Connect_4" do
     end
 
     it "output should contains 'connect 4 start '" do
-      row = "." * 7
-      board = [row] * 6
+     
+      board = [[]] * 7
       output.should_receive(:puts).with(board)
       game.start
     end
   end
 
- 
+
 end

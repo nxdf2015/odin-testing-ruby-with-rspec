@@ -15,7 +15,7 @@ end
 
 def output
   @out  ||= Output.new
-  @out
+
 end
 
 
@@ -24,31 +24,33 @@ end
 class Connect_4
   attr_accessor :players
 
-  def initialize(output = nil,input = nil,board =  "."  * 7 )
+  def initialize(output = nil,input = nil,board =  [ [],[],[],[],[],[],[]] )
     @output = output
     @input  =  input
-    @player = "R"
-    @board ||= board
+    @player = :red
+    @board = board
   end
 
   def start
     @output.puts ("connect four start")
-    row = "." * 7
-    board = [row] * 6
-    @output.puts(board)
+    @output.puts(@board)
   end
 
 
 
  def play
-  message =  "player current #{@player == "R" ? "Red" : "Blue"}"
+  message =  "player current #{@player == :red ? "Red" : "Blue"}"
   @output.puts message
   col  =   @input.gets.to_i
-  @board[col] = @player
+  @board[1] << @player
+
   @output.puts "column #{col} selected"
-  @player = @player == "R" ? "B" : "R"
+  @player = @player == :red ? :blue : :red
 end
 
+# def column(col)
+#   @board[col]
+# end
 
 def get_player
   @player

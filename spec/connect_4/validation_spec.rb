@@ -9,7 +9,7 @@ describe ".Connect_4" do
       let(:game){Connect_4.new(output,input,board)}
 
       it "return true" do
-         expect(game.win?).to be true
+         expect(game).to be_win 
       end
     end
 
@@ -20,7 +20,7 @@ describe ".Connect_4" do
       let(:game){Connect_4.new(output,input,board)}
 
       it "return true" do
-         expect(game.win?).to be true
+         expect(game).to be_win
       end
     end
 
