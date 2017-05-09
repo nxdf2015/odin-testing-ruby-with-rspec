@@ -25,7 +25,7 @@
   
 + `class Draw`
 [lines.rb](https://github.com/nxdf2015/odin-testing-ruby-with-rspec/blob/master/lib/connect_4/lines.rb)
-   `ad
+    
 + `class Lines`
 [draw.rb](https://github.com/nxdf2015/odin-testing-ruby-with-rspec/blob/master/lib/connect_4/draw.rb)
 + capture 
