@@ -87,9 +87,66 @@ end
       input.stub(:gets).and_return("0")
       expect(game).to be_win(2)
     end
+end
+
+context "1 2 3 row complete " do
+    let(:output){double("output").as_null_object}
+    let(:input){double("input")}
+    let (:board){[[:red],[:blue,:red],[:blue,:blue,:red],[:blue,:blue,:blue,:red],[ ],[ ],[ ]]}
+    let(:game){Connect_4.new(output,input,board)}
+
+  it "win? should be true when select column 0" do
+     expect(game).to be_win(0)
+  end
+
+  it "win? should be true when select column 3" do
+     expect(game).to be_win(3)
+  end
+
+  it "win? should be true when select column 2" do
+     expect(game).to be_win(2)
+  end
+
+  it "win? should be false when select column 4" do
+    expect(game).not_to be_win(4)
+  end
+end
+
+context "1 2 3 row complete " do
+    let(:output){double("output").as_null_object}
+    let(:input){double("input")}
+    let (:board){[[:blue,:blue,:blue,:red],[:blue,:blue,:red],[:blue,:red],[:red],[ ],[ ],[ ]]}
+    let(:game){Connect_4.new(output,input,board)}
+
+  it "win? should be true when select column 0" do
+     expect(game).to be_win(0)
+  end
+
+  it "win? should be true when select column 2" do
+    expect(game).to be_win(2)
+  end
 
 end
 
+context "1 2 3 row complete " do
+    let(:output){double("output").as_null_object}
+    let(:input){double("input")}
+    let (:board){[[],[],[:blue,:blue,:blue,:red],[:blue,:blue,:red],[:blue,:red],[:red],[ ]]}
+    let(:game){Connect_4.new(output,input,board)}
+
+  it "win? should be true when select column 2" do
+     expect(game).to be_win(2)
+  end
+
+  it "win? should be true when select column 3" do
+    expect(game).to be_win(3)
+  end
+
 end
 
+
+
+
+
+end
 end
