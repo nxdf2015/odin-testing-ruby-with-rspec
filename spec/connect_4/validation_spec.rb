@@ -20,8 +20,12 @@ describe ".Connect_4" do
         let (:board){[[:red],[:red],[:red],[:red],[],[],[]]}
         let(:game){Connect_4.new(output,input,board)}
 
-        it "win? return true" do
+        it " column 0 :win? return true " do
            expect(game).to be_win
+        end
+
+        it "column  2 win? should return true " do
+          expect(game).to be_win
         end
     end
 
@@ -51,7 +55,11 @@ end
       it "win? return false" do
         expect(game).not_to be_win
       end
+
+
     end
+
+
 
    context "the first row is complete , the player red select column 0 " do
      let(:output){double("output").as_null_object}
@@ -144,7 +152,16 @@ context "1 2 3 row complete " do
 
 end
 
+context "first column full" do
+  let(:output){double("output").as_null_object}
+  let(:input){double("input")}
+  let (:board){[[:red,:red,:red,:red],[:blue,:red],[:red,:red],[:blue,:red],[:red],[:blue],[:red]]}
+  let(:game){Connect_4.new(output,input,board)}
 
+  it "win? should be true " do
+    expect(game).to be_win(0)
+  end
+end
 
 
 

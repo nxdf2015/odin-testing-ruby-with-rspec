@@ -27,7 +27,7 @@ end
 class Connect_4
   attr_accessor :players
 
-  def initialize(output = nil,input = nil,board =  [ [],[],[],[],[],[],[]] )
+  def initialize(output = STDOUT,input = STDIN,board =  [ [],[],[],[],[],[],[]] )
     @output = output
     @input  =  input
     @player = :red
@@ -39,21 +39,41 @@ class Connect_4
     @output.puts(@board)
   end
 
+ def loop
+
+   begin
+   begin
+   current_column = play
+   draw = Draw.new(@board)
+   puts draw.board
+  rescue ArgumentError
+    invalid = true
+  end
+
+ print win?(current_column)
+ end until win?(current_column)
+
+ end
+
+
+
+
+
 
 
  def play
   message =  "player current #{@player == :red ? "Red" : "Blue"}"
   @output.puts message
   col  =   @input.gets.to_i
-  if @board[col].length == 6
+  if @board[col  ].length == 6
     @output.puts "invalid choice - column full !"
     raise ArgumentError
   else
-    @board[col] << @player
+    @board[col   ] << @player
     @output.puts "column #{col} selected"
     @player = @player == :red ? :blue : :red
   end
-
+ col
 end
 
 

@@ -5,7 +5,7 @@ class Lines
   end
 
   def adjacent
-    [line_adjacent(@current_column,:+),line_adjacent(@current_column,:-),column_adjacent(@current_column)]
+    [line_adjacent(@current_column,:+),line_adjacent(@current_column,:-),row_adjacent(@current_column),column_adjacent(@current_column)]
   end
 
   private
@@ -23,11 +23,18 @@ class Lines
    row
    end
 
+  def column_adjacent(current_column)
+    row  = ""
+    row_current = @board[current_column].length
+   (0..4).each do |index|
+      row <<   @board[current_column][row_current - index].to_s if row_current - index >= 0
+    end
+  row
+  end
 
-   def column_adjacent(current_column)
+   def row_adjacent(current_column)
      row  = ""
      row_current = @board[current_column].length
-
     @board.each do |item|
        row << (item.length != row_current   ?    " " : item[row_current-1].to_s)
      end
