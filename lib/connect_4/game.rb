@@ -91,18 +91,6 @@ def win?(current_column = 0)
 lines = [ column_adjacent(current_column),line_adjacent(current_column,:+), line_adjacent(current_column,:-) ]
 
 lines.any? do|line| (not (line =~ /redredredred|blueblueblueblue/ ).nil?) end
-#  row = col_win(current_column)
-#  a = (not (row =~ /redredredred|blueblueblueblue/ ).nil?)
-#
-#  row =line_win(current_column,:+)
-#
-# b = (not (row =~ /redredredred|blueblueblueblue/ ).nil?)
-#
-# row  = line_win(current_column,:-)
-#
-#  c = (not (row =~ /redredredred|blueblueblueblue/ ).nil?)
-#
-# a || b || c
 end
 
 end
