@@ -116,7 +116,7 @@ context "1 2 3 row complete " do
   end
 
   it "win? should be false when select column 4" do
-    expect(game).not_to be_win(4)
+    expect(game).to be_win(3)
   end
 end
 
@@ -163,7 +163,22 @@ context "first column full" do
   end
 end
 
+context "first row win" do
+  let(:output){double("output").as_null_object}
+  let(:input){double("input")}
+  let (:board){[[:red,:blue],[:blue,:blue],[:red,],[:red],[:red],[:red,:blue],[:red]]}
+  let(:game){Connect_4.new(output,input,board)}
+it "win? should be true" do
+  expect(game).to be_win(2)
+end
+it "win? should be true" do
+  expect(game).to be_win(3)
+end
+it "win? should be true" do
+  expect(game).not_to be_win(5)
+end
 
+end
 
 end
 end

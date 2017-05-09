@@ -49,17 +49,9 @@ class Connect_4
   rescue ArgumentError
     invalid = true
   end
-
- print win?(current_column)
  end until win?(current_column)
 
  end
-
-
-
-
-
-
 
  def play
   message =  "player current #{@player == :red ? "Red" : "Blue"}"
