@@ -38,7 +38,7 @@ class Lines
     @board.each do |item|
        row << (item.length >= row_current   ?     item[row_current-1].to_s : " ")
      end
-   print "#{current_column}  row #{row} "
+  #  print "#{current_column}  row #{row} "
    row
    end
 
