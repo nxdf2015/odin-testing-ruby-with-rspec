@@ -10,7 +10,7 @@
 #### `module enumerable`
 ####  [tests for module enumerable](https://github.com/nxdf2015/odin-advanced-building-blocks/tree/master/enumerable/spec)
 
-- ## [OOP with Ruby]()https://github.com/nxdf2015/odin-oop-with-ruby/blob/master/README.md)
+- ## [OOP with Ruby](https://github.com/nxdf2015/odin-oop-with-ruby/blob/master/README.md)
 #### `TIC TAC TOE`
 #### [tests for tictactoe](https://github.com/nxdf2015/odin-oop-with-ruby/tree/master/rspec/spec/tictactoe)
 
