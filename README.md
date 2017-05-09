@@ -16,6 +16,7 @@
 
 - ## [connect four TDD](https://www.theodinproject.com/courses/ruby-programming/lessons/testing-ruby?ref=lc-pb)
 #### `connect four`
+![capture](https://github.com/nxdf2015/odin-testing-ruby-with-rspec/blob/master/Capture.PNG)
 + `class Connect_4`
 [game.rb](https://github.com/nxdf2015/odin-testing-ruby-with-rspec/blob/master/lib/connect_4/game.rb)
   ```
