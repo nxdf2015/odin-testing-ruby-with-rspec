@@ -21,6 +21,9 @@ end
 
 
 
+
+
+
 class Connect_4
   attr_accessor :players
 
@@ -63,34 +66,14 @@ def board
   @board
 end
 
-def line_adjacent(current_column,sign)
-  row = ""
-  row_current = @board[current_column].length
-  (-3..3).each do |index|
-    position_row =( row_current - 1).send(sign, index)
-    position_col = current_column + index
-    if (0..6) === position_col && (0..5) === position_row
-      row <<  (@board[position_col ].length != (position_row + 1)  ? " " :  @board[position_col][position_row].to_s)
-    end
- end
- row
- end
-
-def column_adjacent(current_column)
-  row  = ""
-  row_current = @board[current_column].length
-
- @board.each do |item|
-    row << (item.length != row_current   ?    " " : item[row_current-1].to_s)
-  end
-row
+def full?
+  @board.all? do |column| column.length == 6 end
 end
 
 
 def win?(current_column = 0)
-lines = [ column_adjacent(current_column),line_adjacent(current_column,:+), line_adjacent(current_column,:-) ]
-
-lines.any? do|line| (not (line =~ /redredredred|blueblueblueblue/ ).nil?) end
+lines = Lines.new(current_column, @board)
+lines.adjacent.any? do|line| (not (line =~ /redredredred|blueblueblueblue/ ).nil?) end
 end
 
 end
