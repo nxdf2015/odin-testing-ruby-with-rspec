@@ -15,12 +15,11 @@
 #### [tests for tictactoe](https://github.com/nxdf2015/odin-oop-with-ruby/tree/master/rspec/spec/tictactoe)
 
 - ## [connect four TDD](https://www.theodinproject.com/courses/ruby-programming/lessons/testing-ruby?ref=lc-pb)
-#### `connect four`
-![capture](https://github.com/nxdf2015/odin-testing-ruby-with-rspec/blob/master/Capture.PNG)
- 
+#### `connect four` 
+_to start the game:_
   ```
    game = Connect_4.new
-   game.loop
+   game.loop 
   ```
   
 
