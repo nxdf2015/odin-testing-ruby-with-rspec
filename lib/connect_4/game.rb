@@ -41,7 +41,11 @@ class Connect_4
 
  def loop
 
+
+   draw = Draw.new(@board)
+   puts draw.board
    begin
+
    begin
    current_column = play
    draw = Draw.new(@board)

@@ -6,12 +6,12 @@ class Draw
 
 
   def board
-    (0..5).inject("") do |acc,index| acc = row(index) + "\n" + acc  end
+  (0..5).inject("") do |acc,index| acc = row(index) + "\n" + acc  end
   end
-  
+
 private
   def  row( i)
-    (0..6).to_a.map  do |column|  color(@board[column][i].to_s) end.join("||")
+    (0..6).to_a.map  do |column|  color(@board[column][i].to_s) end.join("||")+"||"
   end
 
 def color(c)
