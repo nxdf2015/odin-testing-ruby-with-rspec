@@ -139,7 +139,7 @@ end
 context "1 2 3 row complete " do
     let(:output){double("output").as_null_object}
     let(:input){double("input")}
-    let (:board){[[],[],[:blue,:blue,:blue,:red],[:blue,:blue,:red],[:blue,:red],[:red],[ ]]}
+    let (:board){[[],[],[:red],[:blue,:red],[:blue,:blue,:red],[:blue,:blue,:blue,:red],[ ]]}
     let(:game){Connect_4.new(output,input,board)}
 
   it "win? should be true when select column 2" do

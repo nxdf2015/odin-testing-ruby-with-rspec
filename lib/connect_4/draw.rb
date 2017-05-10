@@ -6,7 +6,7 @@ class Draw
 
 
   def board
-  (0..5).inject("") do |acc,index| acc = row(index) + "\n" + acc  end
+  "\33[2J " + (0..5).inject("") do |acc,index| acc = row(index) + "\n" + acc  end
   end
 
 private
